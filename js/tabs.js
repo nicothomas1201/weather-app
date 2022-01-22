@@ -34,7 +34,7 @@ function handleSelectTabClick(event){
   const $tabSelected = event.target
   const $tabActive = document.querySelector('.tab[aria-selected="true"]')
   $tabActive.removeAttribute('aria-selected')
-  $tabSelected.setAttirbute('aria-selected', true)
+  $tabSelected.setAttribute('aria-selected', true)
 
   const id = $tabSelected.id
   const $tabPanel = document.querySelector(`[aria-labelledby=${id}]`)
