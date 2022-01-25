@@ -22,8 +22,11 @@
   padding-block: 1rem;
 }
 
+
+
 .dayWeather-item > * {
   margin: 0;
+  /* z-index: -1; */
 }
 
 .dayWeather-time {
@@ -51,4 +54,14 @@
 }
 
 .dayWeather-summary > * {
+  margin: 0;
+  color: var(--white);
+}
+
+.dayWeather-summary p{
+  font: var(--body2-regular);
+}
+
+.dayWeather-summary p span {
+  font: var(--body1-bold);
 }

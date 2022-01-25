@@ -1,5 +1,5 @@
 const $tabContainer = document.querySelector('#tabs')
-const $tabList = $tabContainer.querySelectorAll('.tab')
+const $tabList = $tabContainer.querySelectorAll('.tab') //dia
 
 const today = new Date()
 let weekDay = today.getDay()

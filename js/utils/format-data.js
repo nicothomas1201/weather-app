@@ -12,6 +12,18 @@ export function formatTemp (value){
   return `${Math.floor(value)}°`
 }
 
+export function formatTempMaxMin(value){
+  return `${value}°`
+}
+
+export function formatSpeed(value){
+  return `${value} Km-h`
+}
+
+export function formatHumidiy(value){
+  return `${value}%`
+}
+
 export function formatWeekList(rawData){
   let dayList = []
   const weekList = []
