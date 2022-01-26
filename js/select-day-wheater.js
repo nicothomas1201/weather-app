@@ -1,8 +1,9 @@
-function seeFirstWeatherSummary($item){
+export function seeFirstWeatherSummary(){
   const $tabPanelSelected = tabPanelSelected()
-  let id = Number($item.id)
-  const $dayWeatherSummary = $tabPanelSelected.querySelector(`.dayWeather-summary[id="${id}"]`)
-  $dayWeatherSummary.style.display = 'grid'
+  const $dayWeatherSelected = $tabPanelSelected.querySelector('.dayWeather-item.is-selected')
+  let id = Number($dayWeatherSelected.id)
+  const $dayWeatherSummarySelect = $tabPanelSelected.querySelector(`.dayWeather-summary[id="${id}"]`)
+  $dayWeatherSummarySelect.style.display = 'grid'
 }
 
 function selectFirstDayHour($item){
@@ -10,8 +11,8 @@ function selectFirstDayHour($item){
   $item.forEach((item, index)=>{
     let count = index
     if(index === 0){
-      item.classList.add('is-selected')
-      seeFirstWeatherSummary(item)
+      item.classList.add('is-selected') 
+      seeFirstWeatherSummary()     
     } else if((count % 8) === 0){
       if(newCount === 0){
         item.classList.add('is-selected')
@@ -20,6 +21,9 @@ function selectFirstDayHour($item){
     }
     newCount = 0
   })
+  
+  
+
 }
 
 function selectDayHourClick($item){
@@ -29,11 +33,7 @@ function selectDayHourClick($item){
 }
 
 function tabPanelSelected(){
-  const $tabSelected = document.querySelector('[aria-selected="true"]')
-  let id = $tabSelected.id
-  id = id.charAt(id.length - 1)
-
-  const $tabPanelSelected = document.querySelector(`[aria-labelledby="tab-${id}"]`)
+  const $tabPanelSelected = document.querySelector('.tabPanel:not([hidden])')
   return $tabPanelSelected
 }
 
@@ -41,7 +41,7 @@ function handleSelectDayWeatherClick(event){
   const $tabPanelSelected = tabPanelSelected()
   const $dayWeatherSelected = $tabPanelSelected.querySelector('.is-selected')
   let $dayWeather = event.path[1]
-  console.log($dayWeather.classList.item(0))
+  // console.log($dayWeather.classList.item(0))
   if($dayWeather.classList.item(0) === 'dayWeather-list'){
     $dayWeather = event.path[0]
     // $dayWeather.classList.add('is-selected')

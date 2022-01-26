@@ -32,32 +32,32 @@ export default function draggble($elment, config = defaultConfig){
     setAnimations()
   }
   function handlePointerUp(){
-    logger('pointer UP')
+    // logger('pointer UP')
     dragEnd()
   }
   
   function handlePointerOut(){
-    logger('pointer OUT')
+    // logger('pointer OUT')
     dragEnd()
   }
   
   function handlePointerCancel(){
-    logger('pointer CANCEL')
+    // logger('pointer CANCEL')
     dragEnd()
   }
   
   function handlePointerDown(event){
-    logger('pointer DOWN')
+    // logger('pointer DOWN')
     startDrag(event)
   }
 
   function handleClick(event){
-    logger('click')
+    // logger('click')
     toggle(event)
   }
   
   function handlePointerMove(event){
-    logger('pointer MOVE')
+    // logger('pointer MOVE')
     drag(event)
   }
 
@@ -82,7 +82,7 @@ export default function draggble($elment, config = defaultConfig){
   }
 
   function dragEnd(){
-    logger('DRAG END')
+    // logger('DRAG END')
     isDragging = false
     bounce()
   }
@@ -103,14 +103,14 @@ export default function draggble($elment, config = defaultConfig){
   }
 
   function open(){
-    logger('Abrir Widget')
+    // logger('Abrir Widget')
     isOpen = true
     widgetPosition = VISIBLE_Y_POSITION
     setWidgetPosition(widgetPosition)
   }
 
   function close(){
-    logger('Cerrar Widget')
+    // logger('Cerrar Widget')
     isOpen = false
     widgetPosition = HIDDEN_Y_POSITION 
     setWidgetPosition(widgetPosition)

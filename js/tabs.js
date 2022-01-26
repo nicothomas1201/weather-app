@@ -1,3 +1,5 @@
+import { seeFirstWeatherSummary } from "./select-day-wheater.js"
+
 const $tabContainer = document.querySelector('#tabs')
 const $tabList = $tabContainer.querySelectorAll('.tab') //dia
 
@@ -41,4 +43,5 @@ function handleSelectTabClick(event){
   const $tabPanelSelected = document.querySelector(`.tabPanel:not([hidden])`)
   $tabPanelSelected.hidden = true
   $tabPanel.hidden = false
+  seeFirstWeatherSummary()
 }
